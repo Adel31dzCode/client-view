@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../../Css/Auth/Register.css';
 import Navbar from '../../Components/Navbar';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { ref, push, set } from "firebase/database";
-import { db } from "../../firebase";
 import axios from "axios";
 import { Api_link } from '../../assets/Api';
 import Loading from '../../Components/Loading';

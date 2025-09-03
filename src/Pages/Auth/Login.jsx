@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import '../../Css/Auth/Register.css'; 
 import Navbar from '../../Components/Navbar';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { ref, get } from "firebase/database";
-import { db } from "../../firebase";
 import Loading from '../../Components/Loading';
 import axios from 'axios';
 import Cookies from 'universal-cookie';

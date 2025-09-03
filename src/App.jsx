@@ -10,8 +10,6 @@ import Dashboard from './Pages/Dashboard'
 import Register from './Pages/Auth/Register';
 import Login from './Pages/Auth/Login';
 
-import { ref, onValue } from "firebase/database";
-import { db } from "./firebase";
 import CheckCode from './Pages/Auth/CheckCode'
 import TcfFormules from './Pages/Dahboard/TcfFormules'
 import Users from './Pages/Dahboard/Users'
