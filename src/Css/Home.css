@@ -346,7 +346,6 @@ to {opacity: 1;}
 #second_sec {
     position: relative;
     height: auto;
-    background-image: url('../Svg/bg.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top; 
@@ -710,4 +709,5 @@ to {opacity: 1;}
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
+
 }
