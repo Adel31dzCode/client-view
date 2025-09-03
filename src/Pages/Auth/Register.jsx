@@ -9,8 +9,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function Register({ onSubmit }) {
-
-  const auth = getAuth();
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -204,3 +202,4 @@ const handleSubmit = async (e) => {
     </>
   );
 }
+
