@@ -7,7 +7,6 @@ import Cookies from 'universal-cookie';
 
 
 export default function Login() {
-  const auth = getAuth();
   const [IsLoading, SetIsLoading] = useState(false);
   const Cookie = new Cookies();
 
@@ -140,3 +139,4 @@ const handleSubmit = async (e) => {
     </>
   );
 }
+
