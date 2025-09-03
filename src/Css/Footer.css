@@ -1,0 +1,48 @@
+footer {
+  background-color: #222;
+  width: 100%;
+  padding: 0 20%;
+  height: auto;
+  padding-top: 60px;
+}
+#uls {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+#uls .links_footer {
+  font-size: 16px;
+  color: #fff;
+  font-family: var(--second-font);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  list-style: none;
+  line-height: 45px;
+}
+#uls .title_links {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+footer hr {
+  width: 100%;
+  margin: 100px 0 0;
+  height: 1px;
+  border: none;
+  background-color: #565656;
+}
+#last {
+  display: flex;
+  justify-content: space-between;
+}
+#last p {
+  font-size: 20px;
+  font-family: var(--second-font);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  color: #fff;
+  padding: 20px 0;
+}
+.mrg {
+  margin: 0 10px;
+}

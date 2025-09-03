@@ -1,0 +1,216 @@
+
+/* 1. هيكل الحاوية العامة */
+#title-forms-dashboard {
+  padding-top: 80px;
+  padding-bottom: 0px;
+  background-color: transparent;
+}
+
+#title-forms-dashboard h1 {
+    font-family: var(--main-font);
+    margin: 0 auto;
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 50px;
+    width: fit-content;
+    background: var(--main-color);
+    color: #fff;
+    padding: 14px 25px;
+    border-radius: 50px;
+}
+.flexer_para_dashboard {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 25px;
+}
+#title-forms-dashboard p {
+  font-family: var(--main-font);
+  padding: 0 30px;
+  font-size: 20px;
+}
+
+.color-red {
+  color: red;
+}
+
+
+.cards-container {
+  display: flex;
+  background-color: #fafafb;
+  padding: 0px 5%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* 2. مسطحة تصميم Uiverse للبطاقة */
+.card {
+  background: rgb(44, 44, 44);
+  font-family: 'Courier New', Courier, monospace;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  width: 100%;
+  margin-top: 80px;
+}
+
+
+
+/* 3. عنوان البطاقة */
+.card__title {
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-bottom: 1px solid rgb(167, 159, 159);
+  font-size: 18px;
+  background: rgb(33, 33, 33);
+  position: relative;
+}
+.delete-icon-tcf {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px !important;
+}
+
+/* 4. حاوية البيانات: عمودان */
+.card__data {
+  display: flex;
+  justify-content: space-between;
+  border-right: 1px solid rgb(203, 203, 203);
+  border-left: 1px solid rgb(203, 203, 203);
+  border-bottom: 1px solid rgb(203, 203, 203);
+  font-size: 18px;
+  font-family: var(--second-font);
+}
+
+/* 5. عمود التسميات */
+.card__right {
+  width: 30%;
+  border-right: 1px solid rgb(203, 203, 203);
+}
+
+/* 6. عمود القيم */
+.card__left {
+  width: 70%;
+  text-align: end;
+}
+
+/* 7. تنسيق كل صف */
+.item {
+  padding: 3px 0;
+  background-color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card__right .item {
+  padding-left: 0.8em;
+}
+
+.card__left .item {
+  padding-right: 0.8em;
+}
+
+/* 8. تلوين الصفوف الزوجية */
+.item:nth-child(even) {
+  background: rgb(234, 235, 234);
+}
+
+.copy-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px;
+  font-family: var(--second-font);
+  height: 53px;
+  padding-right: 40px;
+  overflow-x: auto;
+  position: relative;
+  padding-left: 45px !important;
+}
+.key_data {
+  font-family: var(--main-font);
+  font-size: 18px;
+  height: 53px;
+  display: flex;
+  align-items: center;
+}
+#i-continer-formular {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgb(33, 33, 33);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+}
+.copy-icon {
+  cursor: pointer;
+  transition: .2s;
+  color: #fff;
+  font-size: 16px;
+}
+.copy-icon:hover {
+  color: #c1c1c1;
+}
+.copy-icon:active {
+  color: #2b75ff;
+}
+.my-skeleton {
+  width: 500px;
+}
+span[aria-live="polite"] {
+  width: 50%;
+}
+
+
+.search-box {
+  display: flex;
+  justify-content: flex-end;
+  margin: 15px 0 0px;
+  padding: 0 5%;
+  gap: 8px;
+}
+
+.search-box input {
+  width: 240px;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.search-box button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--main-color);
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.search-box button:hover {
+  background: #0056b3;
+}
+
+.no-results {
+  text-align: center;
+  font-size: 16px;
+  color: #777;
+  margin: 30px auto;
+}
+
+

@@ -1,0 +1,294 @@
+#first_sec_pricing {
+    width: 100%;
+    height: auto;
+}
+#invite-to-shop-pricing {
+    width: 100%;
+    height: auto;
+    padding-top: 160px;
+    background: url('../Img/libary.jpg') no-repeat center center/cover;
+    box-shadow: inset 0 0 120px 30px #000000;
+}
+#title_boutique_invite_pricing {
+    color: white;
+    font-size: 42px;
+    text-align: center;
+    padding-bottom: 20px;
+    font-family: var(--main-font);
+    /* background-image: linear-gradient(45deg, #6554b9, #4190ff); */
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    font-weight: bold;
+    color: white; /* لون النص الداخلي */
+
+  color: #fff;
+  -webkit-text-stroke: 1px #fff; /* نخلي stroke شفاف */
+    background-image: linear-gradient(45deg, #3d2499 , #754ffb ); 
+  background-clip: text;
+    padding: 0 20px;
+}
+#para_boutique_invite_pricing {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding-bottom: 22px;
+    font-family: var(--outline-font);
+}
+#para_boutique_invite_pricing a {
+    color: rgb(49, 118, 255);
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: var(--second-font);
+}
+#sec_one_prime_pricing {
+    width: 100%;
+    height: auto;
+
+}
+#sec_one_prime_pricing #title_sec_pricing {
+    text-align: center;
+    font-size: 36px;
+    font-family: var(--main-font);
+    color: #000000; 
+    font-weight: bold;
+    padding-bottom: 70px;
+    background-color: #f5f5f5;
+    padding-top: 40px;
+
+}
+.owner-color-aura {
+    color: #380B0B; 
+    background-image: linear-gradient(3deg, #ffffff, #ffb300);
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    font-weight: bold;
+}
+.tringel_pricing {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-left: 49vw solid transparent;
+  border-right: 49vw solid transparent;
+  border-top: none;
+  border-bottom: 50px solid #fff;
+  margin-top: -55px;
+  }
+
+#procudur-pricing {
+    width: 100%;
+
+}
+#etap1 {
+    text-align: center;
+    font-family: var(--second-font);
+    padding: 20px 5%;
+    font-weight: 700;
+}
+#etap2 {
+    text-align: center;
+    font-family: var(--main-font);
+    padding: 20px 0%;
+}
+.tarifs-pricing {
+    margin-left: 20px;
+    list-style-type: square;
+    width: fit-content;
+}
+.tarif-pricing {
+    font-family: var(--main-font);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.colored-price {
+    color: red;
+    padding: 0 50px;
+}
+.colored-states {
+    color: rgb(123, 123, 123);
+    padding: 0 5px;
+}
+#separator_pay_form_pricing {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+#first_form_pricing {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    position: relative;
+}
+
+#second_pay_pricing {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+}
+.icon_continer_pricing {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.icon_continer_pricing i {
+    font-size: 36px;
+}
+.icon_continer_pricing:nth-child(1) {
+    background-color: #dce8fd;
+    color: #2563eb;
+    width: 140px;
+    height: 90px;
+    font-size: 22px;
+    font-family: var(--main-font);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.icon_continer_pricing {
+    background-color: #d4f2ef;
+    color: #0d9488;
+}
+.title_method_side_pricing {
+    text-align: center;
+    font-size: 18px;
+    font-family: var(--second-font);
+    color: #000000; 
+    font-weight: 400;
+    padding: 0 25px;
+    padding-bottom: 10px;
+}
+.title_method_side_pricing span {
+    padding: 0 5px;
+}
+.colored-red {
+    color: rgb(255, 68, 0);
+}
+.icon-list-style {
+    margin: 0 12px 0 0;
+}
+.text_method_side_pricing {
+    text-align: left;
+    font-size: 18px;
+    font-family: var(--second-font);
+    color: #000000; 
+    padding: 40px 20px 20px 20px;
+}
+
+.pricing-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.pricing-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #007B7F;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.pricing-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-left: 5px solid #007B7F;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.pricing-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.price {
+  font-weight: bold;
+  color: #007B7F;
+  margin-bottom: 10px;
+}
+#title_faq_pricing {
+    font-family: var(--main-font);
+    color: #000;
+    font-size: 48px;
+    padding: 40px 0px 20px;
+    text-align: center;
+}
+
+
+
+
+/* From Uiverse.io by BHARGAVPATEL1244 */ 
+#google-form-link {
+ outline: none;
+ cursor: pointer;
+ border: none;
+ padding: 0.9rem 2rem;
+ margin: 40px 0 20px;
+ font-family: inherit;
+ font-size: inherit;
+ position: relative;
+ display: inline-block;
+ letter-spacing: 0.05rem;
+ font-weight: 700;
+ font-size: 17px;
+ border-radius: 500px;
+ overflow: hidden;
+ background: #dce8fd;
+ color: #fff;
+ z-index: 999;
+ font-family: var(--main-font);
+ width: 60%;
+ margin-left: 20%;
+ transition: .6s;
+}
+#google-form-link:hover {
+    color: #2563eb;
+}
+
+#google-form-link span {
+ position: relative;
+ z-index: 10;
+ transition: color 0.4s;
+}
+
+#google-form-link:hover span {
+ color: black;
+}
+
+#google-form-link::before,
+#google-form-link::after {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 0;
+}
+
+#google-form-link::before {
+ content: "";
+ background: #000;
+ width: 120%;
+ left: -10%;
+ transform: skew(30deg);
+ transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+ z-index: -1;
+}
+
+#google-form-link:hover::before {
+ transform: translate3d(100%, 0, 0);
+}

@@ -1,0 +1,158 @@
+html {
+    scroll-padding-top: 70px;
+}
+#page-service {
+    width: 100%;
+    height: 100vh;
+    padding: 0 5% 0 30%;
+    
+}
+
+#aside {
+    position: relative;
+    width: 25%;
+    height: calc(100% - 80px);
+    position: fixed;
+    top: 80px;
+    left: 5%;
+}
+#aside::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 80%;
+    background-color: #dadada;
+}
+#aside ul {
+    margin-top: 50px;
+}
+#aside ul li {
+    font-size: 18px;
+    font-family: var(--main-font);
+    list-style: none;
+    padding: 15px 0;
+    position: relative;
+    text-align: left;
+}
+#aside ul li a{
+    color: #28306c;
+    text-decoration: none;
+}
+#aside ul li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    transform: translateX(-50%);
+    height: 1px;
+    width: 70%;
+    background-color: #dadada;
+}
+
+#section-content {
+    width: 100%;
+    height: auto;
+    margin-top: 80px;
+    padding-bottom: 80px;
+
+}
+#section-content h1 {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 52px;
+    font-family: var(--main-font);
+    color: #28306c;
+}
+.intro-text-service {
+    font-family: var(--second-font);
+    text-align: center;
+    padding: 0px 0 30px;
+}
+#separator-service {
+    width: 70%;
+    height: 2px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #303030;
+    margin-bottom: 50px;
+}
+#separator-service::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%) translateX(-100%);
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid #303030;
+}
+#separator-service::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%) translateX(100%);
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid #303030;
+}
+#service0-title {
+    color: rgb(255, 52, 52);
+}
+.title-service {
+    font-size: 33px;
+    font-family: var(--main-font);
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+    color: #28306c;
+    text-decoration: underline;
+}
+.color-main-services {
+    color: #39438f;
+    font-weight: bold;
+    
+}
+.title-service img {
+    height: 35px;
+    padding: 0 15px;
+}
+.para-content-service {
+    font-size: 18px;
+    font-family: var(--second-font);
+    padding: 0 25px;
+    margin: 20px;
+    line-height: 1.7;  /* ✅ يسهل القراءة */
+    color: #555;       /* ✅ لون محايد للنص */
+}
+
+/* ✅ تحسين مظهر القوائم */
+.service-list {
+    margin: 15px 0 25px 80px;
+    padding: 0;
+    list-style: none;
+}
+.service-list li {
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-family: var(--second-font);
+    color: #333;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 25px;
+}
+.service-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--main-color);
+    font-weight: bold;
+}
