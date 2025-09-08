@@ -11,7 +11,7 @@ import CheckCode from './Pages/Auth/CheckCode';
 import TcfFormules from './Pages/Dahboard/TcfFormules';
 import Users from './Pages/Dahboard/Users';
 import AdmissionPageDap from './Pages/AdmissionPageDap';
-import AdmissionPageHorz from './Pages/AdmissionPagehorz';
+import AdmissionPageHorz from './Pages/AdmissionPageHorz';
 import Cookies from 'universal-cookie';
 
 import { Api_link } from './assets/Api';
@@ -25,6 +25,7 @@ import Service2 from './Pages/Cat-Dap/Service2'
 import axiosClient from './assets/AxiosClient'
 import Service1_horz from './Pages/Cat-horDap/Service1_horz'
 import Service3_horz from './Pages/Cat-horDap/Service3_horz'
+import Shop from './Pages/Shop'
 
 function App() {
 
@@ -73,6 +74,7 @@ function App() {
       <Route path="/Service-horz-two" element={<Service2_horz UserExisting={user} LoadingState={IsLoading}/>}/>
       <Route path="/Service-horz-three" element={<Service3_horz UserExisting={user} LoadingState={IsLoading}/>}/>
 
+      <Route path="/Boutique-online" element={<Shop UserExisting={user}/>}/>
 
 
 
