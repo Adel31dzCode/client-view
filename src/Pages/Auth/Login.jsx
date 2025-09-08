@@ -4,6 +4,7 @@ import Navbar from '../../Components/Navbar';
 import Loading from '../../Components/Loading';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
+import { Api_link } from '../../assets/Api';
 
 
 export default function Login() {
@@ -51,7 +52,7 @@ const handleSubmit = async (e) => {
   try {
     SetIsLoading(true);
 
-    const response = await axios.post("http://127.0.0.1:8000/api/login", {
+    const response = await axios.post(`${Api_link}login`, {
       email: form.email,
       password: form.password,
     });

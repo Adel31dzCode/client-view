@@ -2,13 +2,23 @@ import React, { useState, useEffect } from 'react';
 import '../Css/Navbar.css';
 import logo from '../Img/logo.jpg';
 import { Link } from "react-router-dom";
+import { Api_link } from '../assets/Api';
+import axios from 'axios';
+import Loading from './Loading';
+import avatar from '../Img/avatar.jpg';
+import Cookies from 'universal-cookie';
 
 
-export default function Navbar({ Activity, current_page, logo_anim_st }) {
+
+export default function Navbar({ UserData, LoadingState, Activity, current_page, logo_anim_st }) {
+  // const [user, setUser] = useState(null);
+    const Cookie = new Cookies();
+  
   const [Open, SetOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [IsLaoding, SetIsLoading] = useState(false);
 
-  // مراقبة ال scroll
+  // 👇 Effect الأول: مراقبة ال scroll
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -17,13 +27,28 @@ export default function Navbar({ Activity, current_page, logo_anim_st }) {
         setScrolled(false);
       }
     };
-
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // 👇 Effect الثاني: جلب بيانات المستخدم
+  // useEffect(() => {
+  //   const token = Cookie.get("Nazya_access_token");
+  //   if (token) {
+  //     SetIsLoading(true);
+  //     axios.get(`${Api_link}user`, {
+  //       headers: { Authorization: `Bearer ${token}` }
+  //     })
+  //     .then(res =>{ setUser(res.data); SetIsLoading(false); console.log(res)})
+  //     .catch((err) =>{ setUser(null); SetIsLoading(false); console.log(err)});
+  //   }
+  // }, []);
+
+  const handleLogout = () => {
+    Cookie.remove("Nazya_access_token");
+    console.log("log out btn clicked")
+    setUser(null);
+  };
 
   return (
     <>
@@ -101,9 +126,30 @@ export default function Navbar({ Activity, current_page, logo_anim_st }) {
             <Link to={"/contact"}><li className={`mini-list-navbar ${current_page === "contact" ? "current" : ""} `}>
               <i className="fa-solid fa-address-book"></i>  Contacter Nous
             </li></Link>
-            <Link to={"/dashboard"}><li className={`mini-list-navbar ${current_page === "contact" ? "current" : ""} `}>
-              <i className="fa-solid fa-chart-line"></i>  Dashboard
+
+            {!UserData ? (
+                 
+                    <li id="list-navbar-connected-side" className="mini-list-navbar-user-side">
+                      <div className="user-menu-side">
+                        <img src={avatar} alt="avatar" className="user-avatar-side" />
+                        <span className="user-name-side">{UserData?.name || "Guest"}  <i className="fa-solid fa-caret-down"></i></span>
+                        <ul className="submenu-side">
+                          <li onClick={handleLogout}><i className="fa-solid fa-arrow-right-from-bracket"></i>  Se déconnecter  </li>
+                        </ul>
+                      </div>
+                    </li>
+                  
+            ) : (
+              <>
+            <Link to={"/register"}><li className={`mini-list-navbar auth-query${current_page === "contact" ? "current" : ""} `}>
+              <i className="fa-solid fa-user-plus"></i>  S’inscrire
             </li></Link>
+            <Link to={"/login"}><li className={`mini-list-navbar auth-query${current_page === "contact" ? "current" : ""} `}>
+               <i className="fa-solid fa-arrow-right-to-bracket"></i>  Se connecter
+            </li></Link>
+             </>
+            )}
+
           </div>
           <hr id="separate_contract" />
           <p className="contact_p">
@@ -116,24 +162,49 @@ export default function Navbar({ Activity, current_page, logo_anim_st }) {
           </p>
         </ul>
 
+        
+
         {/* نضيف كلاس مختلف للوغو عند النزول */}
         <a href="">
           <img
             src={logo}
+            id='img-logo'
             alt="logo"
             className={`logo-navbar ${scrolled || Open ? "logo-scrolled" : ""} ${logo_anim_st ? "logo-scrolled" : ""}`}
           />
         </a>
 
-        <ul id="list-navbar-auth">
-          <li className="mini-list-navbar-login">
-            <Link to="/login"> Se connecter</Link>
-          </li>
-          <li className="mini-list-navbar-register">
-            <Link to="/register">S’inscrire</Link>
-          </li>
+
+
+        
+  {UserData ? (
+  <ul id="list-navbar-connected">
+    <li className="mini-list-navbar-user">
+      <div className="user-menu">
+        <img src={avatar} alt="avatar" className="user-avatar" />
+        <span className="user-name">{UserData.name}  <i className="fa-solid fa-caret-down"></i></span>
+        <ul className="submenu">
+          <li onClick={handleLogout}><i className="fa-solid fa-arrow-right-from-bracket"></i>  Se déconnecter  </li>
         </ul>
+      </div>
+    </li>
+  </ul>
+
+  ) : (
+    <ul id="list-navbar-auth">
+      <li className="mini-list-navbar-login">
+        <Link to="/login"> Se connecter</Link>
+      </li>
+      <li className="mini-list-navbar-register">
+        <Link to="/register">S’inscrire</Link>
+      </li>
+    </ul>
+  )}
+
+
       </nav>
+
+      {LoadingState && <Loading />}
 
       {/* overlay */}
       <div

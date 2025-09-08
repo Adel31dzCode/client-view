@@ -1,0 +1,263 @@
+/* FormRed.css - inspired by FormPer.css, red/dark accent */
+
+.form-service-wrap {
+  max-width: 980px;
+  margin: 24px auto;
+  padding: 12px;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.error-message {
+  color: #b91c1c;
+  font-size: 13px;
+  margin-top: 6px;
+  display: block;
+}
+
+.success-message {
+  color: #16a34a;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.card-service {
+  background: transparent;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+.card-service h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #000;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 800px) {
+  .row2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #e6e9ef;
+  outline: none;
+  font-size: 14px;
+  background: #fff;
+  transition: box-shadow 0.15s, transform 0.06s;
+  transition: .6s;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  transform: translateY(-2px);
+  border-color: #4365ba;
+}
+
+.service-options {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background: #f1f1f1;
+  border: 1px solid #e6e9ef;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+}
+
+.service-card.selected {
+  border-color: #4365ba;
+  background: #EEE;
+  box-shadow: 0 10px 30px rgba(220,38,38,0.06);
+}
+
+.upload-box {
+  border: 2px dashed #31436f;
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+  cursor: pointer;
+  background: #f7f9ff85;
+  transition: border-color 0.12s, transform 0.08s;
+}
+
+.upload-box:hover {
+  border-color: #4365ba;
+  transform: translateY(-3px);
+}
+
+.hidden-file {
+  display: none;
+}
+
+.file-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.file-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d5e1ff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  border: 1px solid #4365ba;
+}
+
+.file-row button {
+  background: transparent;
+  border: none;
+  color: #4365ba;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.primary-btn {
+  width: 100%;
+  background: #4365ba;
+  color: #fff;
+  padding: 12px 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.08s;
+}
+
+.primary-btn:hover {
+  transform: scale(1.02);
+}
+
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.progress-bar {
+  width: 100%;
+  background: #ffe4e6;
+  border-radius: 8px;
+  height: 12px;
+  margin-top: 12px;
+  position: relative;
+}
+
+.progress-bar::after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #4365ba;
+  border-radius: 8px;
+  transition: width 0.3s ease;
+}
+
+.warn-register-first {
+  background: #fff5f5;
+  color: #b91c1c;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.service-card label input {
+    margin-right: 10px;
+}
+
+.service-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  border: 1px solid #4365ba;
+  border-radius: 12px;
+  padding: 14px 16px;
+  background: #009dff08;
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+}
+
+.service-card.selected {
+  border-color: #4365ba;
+  background: hsla(216, 100%, 61%, 0.478);
+  box-shadow: 0 10px 30px rgba(220,38,38,0.1);
+}
+
+.service-card input[type="radio"] {
+  margin-top: 4px;
+  accent-color: #000;
+  flex-shrink: 0;
+}
+
+.svc-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.svc-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: #000;
+}
+
+.svc-desc {
+  font-size: 13px;
+  color: #000;
+}
+
+.svc-price {
+  font-weight: 600;
+  font-size: 14px;
+  color: #000;
+}

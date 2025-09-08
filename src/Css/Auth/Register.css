@@ -37,6 +37,7 @@
   text-align: center;
   line-height: 1.4;
   font-family: var(--second-font);
+  padding-bottom: 20px;
 }
 
 /* 5. كل مجموعة حقل */
@@ -65,6 +66,7 @@
   border-radius: 4px;
 }
 
+
 .edit-btn {
   margin-left: 0.5rem;
   background: transparent;
@@ -81,6 +83,9 @@
   border: 1px solid #ccd0d5;
   border-radius: 4px;
   font-family: var(--second-font);
+}
+.register-form input::placeholder {
+  font-size: 14px;
 }
 
 /* 9. زر المتابعة */

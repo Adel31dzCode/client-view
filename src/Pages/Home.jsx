@@ -8,7 +8,10 @@ import Footer from '../Components/Footer';
 import Select from 'react-select'; // أضف هذا في أعلى الملف
 import { useNavigation } from 'react-router-dom';
 
-export default function Home() {
+export default function Home({ UserExisting }) {
+
+    console.log(UserExisting)
+
 
   const [TcfChoice, setTcfChoice] = useState(null); // الخيار الأول
   const [ServiceChoosenState, SetServiceChoosen] = useState(false); // الخيار الثاني
@@ -56,8 +59,8 @@ export default function Home() {
 
 
     const type_ladmission = [
-    { value: 'connecte', label: "établissement connecté à l'espace campus France " },
-    { value: 'no_connect', label: "établissement non connecté à l'espace campus France" },
+    { value: 'connecte', label: "Établissement connecté à l'espace campus France " },
+    { value: 'no_connect', label: "Établissement non connecté à l'espace campus France" },
   ];
 
 
@@ -123,7 +126,7 @@ const optionsForB = [
   return (
     <>
   
-    <Navbar  current_page={"home"}/>
+    <Navbar  current_page={"home"} UserData={UserExisting}/>
 
 
   <section id="first_sec">
@@ -135,7 +138,7 @@ const optionsForB = [
           Découvrez nos services personnalisés pour réussir votre projet
           d’études en France .
         </p>
-        <div className="container">
+        <div className="container-btn">
           <a href="#" className="button type--C">
             <div className="button__line" />
             <div className="button__line" />
@@ -329,11 +332,7 @@ const optionsForB = [
       }}
     />
 
-        <p>Sélectionnez l’établissement:</p>
-
-
     {/* الحقل الثاني */}
-
     <Select
       id="only_select_pad"
       name="Sub-admission"
@@ -354,10 +353,27 @@ const optionsForB = [
     {/* زر Go Book */}
     <button
       id="take-date-tcf"
-      disabled={!admissionChoice || !subAdmissionChoice} // يفتح فقط بعد الحقلين
+      disabled={!admissionChoice || !subAdmissionChoice}
       onClick={() => {
         if (admissionChoice && subAdmissionChoice) {
-          window.location.href = "/admission"; // غيّر اللينك حسب رغبتك
+          // تحديد الرابط بناءً على الاختيارات
+          let redirectUrl = "/admission"; // الرابط الافتراضي
+          
+          if (admissionChoice === "connecte") {
+            if (subAdmissionChoice.value === "a1") {
+              redirectUrl = "/AdmissionDap"; // رابط Dap blanche
+            } else if (subAdmissionChoice.value === "a2") {
+              redirectUrl = "/AdmissionHorzDap"; // رابط Hors Dap
+            }
+          } else if (admissionChoice === "no_connect") {
+            if (subAdmissionChoice.value === "b1") {
+              redirectUrl = "/paris-saclay"; // رابط Paris Saclay
+            } else if (subAdmissionChoice.value === "b2") {
+              redirectUrl = "/parcoursup"; // رابط Parcoursup
+            }
+          }
+          
+          window.location.href = redirectUrl;
         }
       }}
     >

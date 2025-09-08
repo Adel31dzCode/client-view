@@ -726,24 +726,16 @@ if (formData.examCenter === 'other') { // غيرت من 'autre' إلى 'other'
                                         </div>
                                         <div className="form-field">
                                             <label className="required">Wilaya</label>
-                                            <select
+                                            <input
                                                 name="wilaya"
+                                                type='text'
+                                                placeholder='Sélectionnez une wilaya'
                                                 value={formData.wilaya}
                                                 onChange={handleChange}
                                                 onBlur={handleBlur}
                                                 className={errors.wilaya ? 'error' : ''}
-                                            >
-                                                <option value="">Sélectionnez une wilaya</option>
-                                                <option value="alger">Alger</option>
-                                                <option value="oran">Oran</option>
-                                                <option value="constantine">Constantine</option>
-                                                <option value="annaba">Annaba</option>
-                                                <option value="blida">Blida</option>
-                                                <option value="batna">Batna</option>
-                                                <option value="setif">Sétif</option>
-                                                <option value="tlemcen">Tlemcen</option>
-                                                <option value="autre">Autre</option>
-                                            </select>
+                                            />
+                                            
                                             {errors.wilaya && <span className="error-message">{errors.wilaya}</span>}
                                         </div>
                                         <div className="form-field full-width">
@@ -788,6 +780,14 @@ if (formData.examCenter === 'other') { // غيرت من 'autre' إلى 'other'
         <div className="radio-item">
             <input type="radio" id="centerConstantine" name="examCenter" value="constantine" checked={formData.examCenter === 'constantine'} onChange={handleChange} />
             <label htmlFor="centerConstantine">Constantine</label>
+        </div>
+        <div className="radio-item">
+            <input type="radio" id="centerConstantine" name="examCenter" value="tlemcen" checked={formData.examCenter === 'tlemcen'} onChange={handleChange} />
+            <label htmlFor="centerConstantine">Tlemcen</label>
+        </div>
+        <div className="radio-item">
+            <input type="radio" id="centerConstantine" name="examCenter" value="annaba" checked={formData.examCenter === 'annaba'} onChange={handleChange} />
+            <label htmlFor="centerConstantine">Annaba</label>
         </div>
         <div className="radio-item">
             <input type="radio" id="centerOther" name="examCenter" value="other" checked={formData.examCenter === 'other'} onChange={handleChange} />

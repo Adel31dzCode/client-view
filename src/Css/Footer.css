@@ -37,7 +37,7 @@ footer hr {
 }
 #last p {
   font-size: 20px;
-  font-family: var(--second-font);
+  font-family: var(--main-font);
   font-optical-sizing: auto;
   font-weight: 400;
   color: #fff;
@@ -45,4 +45,48 @@ footer hr {
 }
 .mrg {
   margin: 0 10px;
+}
+
+@media (max-width: 1030px) {
+footer {
+  padding: 50px 10% 0;
+}
+}
+
+@media (max-width: 900px) {
+footer {
+  padding: 50px 1% 0;
+}
+}
+@media (max-width: 800px) {
+footer {
+  padding: 50px 1% 0;
+}
+#uls {
+  flex-wrap: wrap;
+}
+#uls .links_footer {
+  width: 100%;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+#uls .title_links {
+  text-decoration: underline;
+  color: rgb(255, 229, 35);
+}
+}
+@media (max-width: 400px)  {
+footer {
+padding-top: 30px;
+}
+#uls .links_footer {
+  margin-top: 5px;
+}
+#last p {
+  font-size: 14px;
+  padding-left: 7px;
+}
 }

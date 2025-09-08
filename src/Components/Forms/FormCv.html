@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Création de Site Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen py-8">
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold text-gray-800 mb-2">Création de Site Web</h1>
+                <p class="text-gray-600">Remplissez ce formulaire pour commencer votre projet</p>
+            </div>
+
+            <form id="websiteForm" class="space-y-8">
+                <!-- Informations personnelles -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Informations personnelles</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Nom *</label>
+                            <input type="text" id="nom" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Prénom *</label>
+                            <input type="text" id="prenom" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Adresse complète *</label>
+                        <textarea id="adresse" required rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Numéro, rue, ville, code postal"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Adresse e-mail *</label>
+                            <input type="email" id="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Numéro de téléphone *</label>
+                            <input type="tel" id="telephone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Lien LinkedIn</label>
+                        <input type="url" id="linkedin" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="https://linkedin.com/in/votre-profil">
+                    </div>
+                </div>
+
+                <!-- Permis de conduire -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Permis de conduire</h2>
+                    
+                    <div class="mb-4">
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="radio" name="permis" value="non" id="permisNon" class="w-4 h-4 text-blue-600" checked>
+                            <span class="text-gray-700">Non, je n'ai pas de permis de conduire</span>
+                        </label>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="radio" name="permis" value="oui" id="permisOui" class="w-4 h-4 text-blue-600">
+                            <span class="text-gray-700">Oui, j'ai un permis de conduire</span>
+                        </label>
+                    </div>
+
+                    <div id="categoriesPermis" class="ml-7 space-y-2 hidden">
+                        <p class="text-sm font-medium text-gray-700 mb-3">Catégories (vous pouvez en sélectionner plusieurs) :</p>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" name="categoriePermis" value="A" class="w-4 h-4 text-blue-600 rounded">
+                            <span class="text-gray-700">Catégorie A (Moto)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" name="categoriePermis" value="B" class="w-4 h-4 text-blue-600 rounded">
+                            <span class="text-gray-700">Catégorie B (Voiture)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" name="categoriePermis" value="C" class="w-4 h-4 text-blue-600 rounded">
+                            <span class="text-gray-700">Catégorie C (Poids lourd)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" name="categoriePermis" value="D" class="w-4 h-4 text-blue-600 rounded">
+                            <span class="text-gray-700">Catégorie D (Transport en commun)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Site web personnel -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Site web personnel</h2>
+                    
+                    <div class="mb-4">
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="radio" name="siteWeb" value="non" id="siteWebNon" class="w-4 h-4 text-blue-600" checked>
+                            <span class="text-gray-700">Non, je n'ai pas de site web personnel</span>
+                        </label>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="radio" name="siteWeb" value="oui" id="siteWebOui" class="w-4 h-4 text-blue-600">
+                            <span class="text-gray-700">Oui, j'ai un site web personnel</span>
+                        </label>
+                    </div>
+
+                    <div id="urlSiteWeb" class="ml-7 hidden">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">URL de votre site web :</label>
+                        <input type="url" id="siteWebUrl" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="https://votre-site.com">
+                    </div>
+                </div>
+
+                <!-- Parcours scolaire et universitaire -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Parcours scolaire et universitaire</h2>
+                    
+                    <!-- Baccalauréat -->
+                    <div class="mb-6">
+                        <h3 class="text-lg font-medium text-gray-800 mb-3">Baccalauréat</h3>
+                        
+                        <div class="space-y-3">
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="baccalaureat" value="non" id="bacNon" class="w-4 h-4 text-blue-600" checked>
+                                <span class="text-gray-700">Je n'ai pas encore le baccalauréat</span>
+                            </label>
+                            
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="baccalaureat" value="en_cours" id="bacEnCours" class="w-4 h-4 text-blue-600">
+                                <span class="text-gray-700">Je suis en baccalauréat en cours</span>
+                            </label>
+                            
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="baccalaureat" value="obtenu" id="bacObtenu" class="w-4 h-4 text-blue-600">
+                                <span class="text-gray-700">J'ai obtenu mon baccalauréat</span>
+                            </label>
+                        </div>
+
+                        <div id="lyceeActuelInfo" class="ml-7 mt-4 hidden">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Nom de votre lycée actuel :</label>
+                            <input type="text" id="lyceeActuel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Nom du lycée">
+                        </div>
+
+                        <div id="bacObtenuInfo" class="ml-7 mt-4 hidden">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Filière du baccalauréat :</label>
+                                    <input type="text" id="filiereBac" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Ex: S, ES, L, STI2D...">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Lycée d'obtention :</label>
+                                    <input type="text" id="lyceeBac" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Nom du lycée">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Mention :</label>
+                                    <select id="mentionBac" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                        <option value="">Sélectionner une mention</option>
+                                        <option value="passable">Passable</option>
+                                        <option value="assez_bien">Assez bien</option>
+                                        <option value="bien">Bien</option>
+                                        <option value="tres_bien">Très bien</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Année d'obtention :</label>
+                                    <input type="number" id="anneeBac" min="1990" max="2030" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="2023">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Études supérieures -->
+                    <div class="border-t pt-6">
+                        <h3 class="text-lg font-medium text-gray-800 mb-3">Études supérieures</h3>
+                        
+                        <div class="space-y-3 mb-4">
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="etudesSuperieures" value="non" id="etudesNon" class="w-4 h-4 text-blue-600" checked>
+                                <span class="text-gray-700">Je ne suis pas dans l'enseignement supérieur</span>
+                            </label>
+                            
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="etudesSuperieures" value="en_cours" id="etudesEnCours" class="w-4 h-4 text-blue-600">
+                                <span class="text-gray-700">Je suis actuellement en études supérieures</span>
+                            </label>
+                        </div>
+
+                        <div id="niveauEtudesInfo" class="ml-7 space-y-4 hidden">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Niveau actuel :</label>
+                                <select id="niveauEtudes" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                    <option value="">Sélectionner votre niveau</option>
+                                    <option value="L1">L1 (Licence 1ère année)</option>
+                                    <option value="L2">L2 (Licence 2ème année)</option>
+                                    <option value="L3">L3 (Licence 3ème année)</option>
+                                    <option value="M1">M1 (Master 1ère année)</option>
+                                    <option value="M2">M2 (Master 2ème année)</option>
+                                </select>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Établissement actuel :</label>
+                                    <input type="text" id="etablissementActuel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Université, école...">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Spécialité actuelle :</label>
+                                    <input type="text" id="specialiteActuelle" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Informatique, Droit, Médecine...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diplôme de licence -->
+                    <div class="border-t pt-6">
+                        <h3 class="text-lg font-medium text-gray-800 mb-3">Diplôme de licence</h3>
+                        
+                        <div class="space-y-3 mb-4">
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="licenceObtenue" value="non" id="licenceNon" class="w-4 h-4 text-blue-600" checked>
+                                <span class="text-gray-700">Je n'ai pas encore obtenu de licence</span>
+                            </label>
+                            
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="licenceObtenue" value="oui" id="licenceOui" class="w-4 h-4 text-blue-600">
+                                <span class="text-gray-700">J'ai obtenu ma licence</span>
+                            </label>
+                        </div>
+
+                        <div id="licenceInfo" class="ml-7 hidden">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Nom de la licence :</label>
+                                    <input type="text" id="nomLicence" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Ex: Licence Informatique">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Année d'obtention :</label>
+                                    <input type="number" id="anneeLicence" min="1990" max="2030" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="2023">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Mention :</label>
+                                    <select id="mentionLicence" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                        <option value="">Sélectionner une mention</option>
+                                        <option value="passable">Passable</option>
+                                        <option value="assez_bien">Assez bien</option>
+                                        <option value="bien">Bien</option>
+                                        <option value="tres_bien">Très bien</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Nom de l'établissement :</label>
+                                    <input type="text" id="etablissementLicence" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Université, école...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diplôme BTS -->
+                    <div class="border-t pt-6">
+                        <h3 class="text-lg font-medium text-gray-800 mb-3">Diplôme BTS</h3>
+                        
+                        <div class="space-y-3 mb-4">
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="btsObtenu" value="non" id="btsNon" class="w-4 h-4 text-blue-600" checked>
+                                <span class="text-gray-700">Je n'ai pas de BTS</span>
+                            </label>
+                            
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="btsObtenu" value="oui" id="btsOui" class="w-4 h-4 text-blue-600">
+                                <span class="text-gray-700">J'ai obtenu un BTS</span>
+                            </label>
+                        </div>
+
+                        <div id="btsInfo" class="ml-7 hidden">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Nom du BTS et spécialité :</label>
+                                    <input type="text" id="nomBts" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Ex: BTS Informatique de gestion">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Année d'obtention :</label>
+                                    <input type="number" id="anneeBts" min="1990" max="2030" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="2023">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Nom de l'établissement :</label>
+                                    <input type="text" id="etablissementBts" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Lycée, école...">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Mention :</label>
+                                    <select id="mentionBts" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                        <option value="">Sélectionner une mention</option>
+                                        <option value="passable">Passable</option>
+                                        <option value="assez_bien">Assez bien</option>
+                                        <option value="bien">Bien</option>
+                                        <option value="tres_bien">Très bien</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diplôme de fin d'étude -->
+                    <div class="border-t pt-6">
+                        <h3 class="text-lg font-medium text-gray-800 mb-3">Diplôme de fin d'étude</h3>
+                        
+                        <div class="space-y-3 mb-4">
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="diplomeFinEtude" value="non" id="diplomeFinNon" class="w-4 h-4 text-blue-600" checked>
+                                <span class="text-gray-700">Je n'ai pas encore de diplôme de fin d'étude</span>
+                            </label>
+                            
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="diplomeFinEtude" value="oui" id="diplomeFinOui" class="w-4 h-4 text-blue-600">
+                                <span class="text-gray-700">J'ai obtenu mon diplôme de fin d'étude</span>
+                            </label>
+                        </div>
+
+                        <div id="diplomeFinInfo" class="ml-7 hidden">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Nom du diplôme :</label>
+                                    <input type="text" id="nomDiplomeFin" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Ex: Master en Informatique">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Année d'obtention :</label>
+                                    <input type="number" id="anneeDiplomeFin" min="1990" max="2030" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="2023">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Mention :</label>
+                                    <select id="mentionDiplomeFin" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                        <option value="">Sélectionner une mention</option>
+                                        <option value="passable">Passable</option>
+                                        <option value="assez_bien">Assez bien</option>
+                                        <option value="bien">Bien</option>
+                                        <option value="tres_bien">Très bien</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Nom de l'établissement :</label>
+                                    <input type="text" id="etablissementDiplomeFin" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Université, école...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expériences professionnelles -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Expériences professionnelles</h2>
+                    
+                    <!-- Stages -->
+                    <div class="mb-6">
+                        <h3 class="text-lg font-medium text-gray-800 mb-3">Stages</h3>
+                        
+                        <div class="space-y-3 mb-4">
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="stages" value="non" id="stagesNon" class="w-4 h-4 text-blue-600" checked>
+                                <span class="text-gray-700">Je n'ai pas d'expérience de stage</span>
+                            </label>
+                            
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="stages" value="oui" id="stagesOui" class="w-4 h-4 text-blue-600">
+                                <span class="text-gray-700">J'ai effectué des stages</span>
+                            </label>
+                        </div>
+
+                        <div id="stagesInfo" class="ml-7 hidden">
+                            <div id="stagesList" class="space-y-4">
+                                <!-- Les stages seront ajoutés dynamiquement ici -->
+                            </div>
+                            <button type="button" id="ajouterStage" class="mt-3 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                + Ajouter un stage
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Postes professionnels -->
+                    <div class="border-t pt-6">
+                        <h3 class="text-lg font-medium text-gray-800 mb-3">Postes professionnels</h3>
+                        
+                        <div class="space-y-3 mb-4">
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="postes" value="non" id="postesNon" class="w-4 h-4 text-blue-600" checked>
+                                <span class="text-gray-700">Je n'ai pas d'expérience professionnelle</span>
+                            </label>
+                            
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="postes" value="oui" id="postesOui" class="w-4 h-4 text-blue-600">
+                                <span class="text-gray-700">J'ai occupé des postes professionnels</span>
+                            </label>
+                        </div>
+
+                        <div id="postesInfo" class="ml-7 hidden">
+                            <div id="postesList" class="space-y-4">
+                                <!-- Les postes seront ajoutés dynamiquement ici -->
+                            </div>
+                            <button type="button" id="ajouterPoste" class="mt-3 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                + Ajouter un poste
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compétences -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Compétences</h2>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Compétences techniques :</label>
+                            <textarea id="competencesTechniques" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Ex: analyse chimique, gestion de projet, utilisation de logiciels spécialisés..."></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Compétences informatiques :</label>
+                            <textarea id="competencesInformatiques" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Ex: Pack Office, Excel avancé, Python, logiciels de laboratoire..."></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Compétences linguistiques :</label>
+                            <textarea id="competencesLinguistiques" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Ex: Français courant, Anglais B2, Espagnol A2..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Centres d'intérêt -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Centres d'intérêt</h2>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" name="centresInteret" value="lecture" class="w-4 h-4 text-blue-600 rounded">
+                            <span class="text-gray-700">Lecture</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" name="centresInteret" value="sport" class="w-4 h-4 text-blue-600 rounded">
+                            <span class="text-gray-700">Sport</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" name="centresInteret" value="voyage" class="w-4 h-4 text-blue-600 rounded">
+                            <span class="text-gray-700">Voyage</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" name="centresInteret" value="musique" class="w-4 h-4 text-blue-600 rounded">
+                            <span class="text-gray-700">Musique</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" name="centresInteret" value="cinema_theatre" class="w-4 h-4 text-blue-600 rounded">
+                            <span class="text-gray-700">Cinéma / Théâtre</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" name="centresInteret" value="benevolat" class="w-4 h-4 text-blue-600 rounded">
+                            <span class="text-gray-700">Bénévolat</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" name="centresInteret" value="informatique" class="w-4 h-4 text-blue-600 rounded">
+                            <span class="text-gray-700">Informatique</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" name="centresInteret" value="recherche" class="w-4 h-4 text-blue-600 rounded">
+                            <span class="text-gray-700">Recherche scientifique</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" name="centresInteret" value="art" class="w-4 h-4 text-blue-600 rounded">
+                            <span class="text-gray-700">Art / Dessin</span>
+                        </label>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Autre (à préciser) :</label>
+                        <input type="text" id="autreInteret" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Précisez vos autres centres d'intérêt...">
+                    </div>
+                </div>
+
+                <!-- Projets de fin d'étude et de cycle -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-6">Projets de fin d'étude et de cycle</h2>
+                    
+                    <!-- Projet de fin d'étude -->
+                    <div class="mb-8">
+                        <h3 class="text-lg font-medium text-gray-800 mb-3">Projet de fin d'étude</h3>
+                        
+                        <div class="space-y-3 mb-4">
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="projetFinEtude" value="non" id="projetFinEtudeNon" class="w-4 h-4 text-blue-600" checked>
+                                <span class="text-gray-700">Je n'ai pas encore de projet de fin d'étude</span>
+                            </label>
+                            
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="projetFinEtude" value="en_cours" id="projetFinEtudeEnCours" class="w-4 h-4 text-blue-600">
+                                <span class="text-gray-700">J'ai un projet de fin d'étude en cours</span>
+                            </label>
+                            
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="projetFinEtude" value="termine" id="projetFinEtudeTermine" class="w-4 h-4 text-blue-600">
+                                <span class="text-gray-700">J'ai terminé mon projet de fin d'étude</span>
+                            </label>
+                        </div>
+
+                        <div id="projetFinEtudeInfo" class="ml-7 space-y-4 hidden">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Intitulé du projet :</label>
+                                <input type="text" id="intituleProjetFinEtude" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Titre de votre projet">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Thème / sujet traité :</label>
+                                <textarea id="themeProjetFinEtude" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Décrivez le thème de votre projet..."></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Objectifs du projet :</label>
+                                <textarea id="objectifsProjetFinEtude" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Quels sont les objectifs de votre projet ?"></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Méthodologie / outils utilisés :</label>
+                                <textarea id="methodologieProjetFinEtude" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Décrivez votre méthodologie et les outils utilisés..."></textarea>
+                            </div>
+
+                            <div id="resultatsProjetFinEtudeDiv">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Résultats principaux :</label>
+                                <textarea id="resultatsProjetFinEtude" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Quels sont les résultats obtenus ?"></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Établissement / entreprise d'accueil :</label>
+                                <input type="text" id="etablissementProjetFinEtude" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Nom de l'établissement ou entreprise">
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Date de début :</label>
+                                    <input type="date" id="dateDebutProjetFinEtude" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Date de fin :</label>
+                                    <input type="date" id="dateFinProjetFinEtude" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet de fin de cycle (Licence) -->
+                    <div class="border-t pt-6">
+                        <h3 class="text-lg font-medium text-gray-800 mb-3">Projet de fin de cycle (Licence)</h3>
+                        
+                        <div class="space-y-3 mb-4">
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="projetFinCycle" value="non" id="projetFinCycleNon" class="w-4 h-4 text-blue-600" checked>
+                                <span class="text-gray-700">Je n'ai pas de projet de fin de cycle</span>
+                            </label>
+                            
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="projetFinCycle" value="en_cours" id="projetFinCycleEnCours" class="w-4 h-4 text-blue-600">
+                                <span class="text-gray-700">J'ai un projet de fin de cycle en cours</span>
+                            </label>
+                            
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="projetFinCycle" value="termine" id="projetFinCycleTermine" class="w-4 h-4 text-blue-600">
+                                <span class="text-gray-700">J'ai terminé mon projet de fin de cycle</span>
+                            </label>
+                        </div>
+
+                        <div id="projetFinCycleInfo" class="ml-7 space-y-4 hidden">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Intitulé du projet :</label>
+                                <input type="text" id="intituleProjetFinCycle" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Titre de votre projet de licence">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Thème / sujet traité :</label>
+                                <textarea id="themeProjetFinCycle" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Décrivez le thème de votre projet..."></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Objectifs du projet :</label>
+                                <textarea id="objectifsProjetFinCycle" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Quels sont les objectifs de votre projet ?"></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Méthodologie / outils utilisés :</label>
+                                <textarea id="methodologieProjetFinCycle" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Décrivez votre méthodologie et les outils utilisés..."></textarea>
+                            </div>
+
+                            <div id="resultatsProjetFinCycleDiv">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Résultats principaux :</label>
+                                <textarea id="resultatsProjetFinCycle" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Quels sont les résultats obtenus ?"></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Établissement / entreprise d'accueil :</label>
+                                <input type="text" id="etablissementProjetFinCycle" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Nom de l'établissement ou entreprise">
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Date de début :</label>
+                                    <input type="date" id="dateDebutProjetFinCycle" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Date de fin :</label>
+                                    <input type="date" id="dateFinProjetFinCycle" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Objectif du CV -->
+                <div class="bg-blue-50 rounded-lg p-6 border-l-4 border-blue-500">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Objectif du CV</h2>
+                    <div class="bg-white rounded-lg p-4 space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Type d'établissement visé *</label>
+                                <select id="typeEtablissement" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                    <option value="">Choisir le type d'établissement</option>
+                                    <option value="universite">Université</option>
+                                    <option value="ecole_ingenieur">École d'ingénieur</option>
+                                    <option value="ecole_commerce">École de commerce</option>
+                                    <option value="iut">IUT</option>
+                                    <option value="bts">BTS</option>
+                                    <option value="cpge">CPGE (Classes préparatoires)</option>
+                                    <option value="ecole_specialisee">École spécialisée</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Nom de l'établissement *</label>
+                                <input type="text" id="nomEtablissementVise" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Ex: Paris-Saclay, Polytechnique, INSA Lyon...">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Formation/Filière visée *</label>
+                                <input type="text" id="formationVisee" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Ex: Master Informatique, Licence Chimie...">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Ville</label>
+                                <input type="text" id="villeEtablissement" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Ex: Paris, Lyon, Toulouse...">
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Description de votre projet professionnel</label>
+                            <textarea id="projetProfessionnel" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Décrivez brièvement vos objectifs professionnels, le secteur d'activité qui vous intéresse, vos motivations pour cette formation..."></textarea>
+                        </div>
+                        
+
+                    </div>
+                </div>
+
+                <!-- Bouton de soumission -->
+                <div class="pt-6">
+                    <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-4 px-6 rounded-lg hover:from-blue-700 hover:to-indigo-700 transform hover:scale-105 transition-all duration-200 shadow-lg">
+                        Soumettre le formulaire
+                    </button>
+                </div>
+            </form>
+
+            <!-- Message de confirmation -->
+            <div id="confirmationMessage" class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="font-medium">Formulaire soumis avec succès ! Toutes vos informations ont été enregistrées.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gestion de l'affichage conditionnel des champs
+
+        // Permis de conduire
+        document.getElementById('permisOui').addEventListener('change', function() {
+            document.getElementById('categoriesPermis').classList.remove('hidden');
+        });
+
+        document.getElementById('permisNon').addEventListener('change', function() {
+            document.getElementById('categoriesPermis').classList.add('hidden');
+            document.querySelectorAll('input[name="categoriePermis"]').forEach(cb => cb.checked = false);
+        });
+
+        // Site web personnel
+        document.getElementById('siteWebOui').addEventListener('change', function() {
+            document.getElementById('urlSiteWeb').classList.remove('hidden');
+        });
+
+        document.getElementById('siteWebNon').addEventListener('change', function() {
+            document.getElementById('urlSiteWeb').classList.add('hidden');
+            document.getElementById('siteWebUrl').value = '';
+        });
+
+        // Baccalauréat
+        document.getElementById('bacEnCours').addEventListener('change', function() {
+            document.getElementById('lyceeActuelInfo').classList.remove('hidden');
+            document.getElementById('bacObtenuInfo').classList.add('hidden');
+            clearBacObtenuFields();
+        });
+
+        document.getElementById('bacObtenu').addEventListener('change', function() {
+            document.getElementById('bacObtenuInfo').classList.remove('hidden');
+            document.getElementById('lyceeActuelInfo').classList.add('hidden');
+            document.getElementById('lyceeActuel').value = '';
+        });
+
+        document.getElementById('bacNon').addEventListener('change', function() {
+            document.getElementById('lyceeActuelInfo').classList.add('hidden');
+            document.getElementById('bacObtenuInfo').classList.add('hidden');
+            document.getElementById('lyceeActuel').value = '';
+            clearBacObtenuFields();
+        });
+
+        // Études supérieures
+        document.getElementById('etudesEnCours').addEventListener('change', function() {
+            document.getElementById('niveauEtudesInfo').classList.remove('hidden');
+        });
+
+        document.getElementById('etudesNon').addEventListener('change', function() {
+            document.getElementById('niveauEtudesInfo').classList.add('hidden');
+            clearEtudesFields();
+        });
+
+        // Licence obtenue
+        document.getElementById('licenceOui').addEventListener('change', function() {
+            document.getElementById('licenceInfo').classList.remove('hidden');
+        });
+
+        document.getElementById('licenceNon').addEventListener('change', function() {
+            document.getElementById('licenceInfo').classList.add('hidden');
+            clearLicenceFields();
+        });
+
+        // BTS obtenu
+        document.getElementById('btsOui').addEventListener('change', function() {
+            document.getElementById('btsInfo').classList.remove('hidden');
+        });
+
+        document.getElementById('btsNon').addEventListener('change', function() {
+            document.getElementById('btsInfo').classList.add('hidden');
+            clearBtsFields();
+        });
+
+        // Diplôme de fin d'étude
+        document.getElementById('diplomeFinOui').addEventListener('change', function() {
+            document.getElementById('diplomeFinInfo').classList.remove('hidden');
+        });
+
+        document.getElementById('diplomeFinNon').addEventListener('change', function() {
+            document.getElementById('diplomeFinInfo').classList.add('hidden');
+            clearDiplomeFinFields();
+        });
+
+        // Stages
+        document.getElementById('stagesOui').addEventListener('change', function() {
+            document.getElementById('stagesInfo').classList.remove('hidden');
+        });
+
+        document.getElementById('stagesNon').addEventListener('change', function() {
+            document.getElementById('stagesInfo').classList.add('hidden');
+            document.getElementById('stagesList').innerHTML = '';
+        });
+
+        // Postes professionnels
+        document.getElementById('postesOui').addEventListener('change', function() {
+            document.getElementById('postesInfo').classList.remove('hidden');
+        });
+
+        document.getElementById('postesNon').addEventListener('change', function() {
+            document.getElementById('postesInfo').classList.add('hidden');
+            document.getElementById('postesList').innerHTML = '';
+        });
+
+        // Projet de fin d'étude
+        document.getElementById('projetFinEtudeEnCours').addEventListener('change', function() {
+            document.getElementById('projetFinEtudeInfo').classList.remove('hidden');
+            document.getElementById('resultatsProjetFinEtudeDiv').style.display = 'block';
+            document.getElementById('resultatsProjetFinEtude').placeholder = 'Quels sont les résultats obtenus ? (si disponibles)';
+        });
+
+        document.getElementById('projetFinEtudeTermine').addEventListener('change', function() {
+            document.getElementById('projetFinEtudeInfo').classList.remove('hidden');
+            document.getElementById('resultatsProjetFinEtudeDiv').style.display = 'block';
+            document.getElementById('resultatsProjetFinEtude').placeholder = 'Quels sont les résultats obtenus ?';
+        });
+
+        document.getElementById('projetFinEtudeNon').addEventListener('change', function() {
+            document.getElementById('projetFinEtudeInfo').classList.add('hidden');
+            clearProjetFinEtudeFields();
+        });
+
+        // Projet de fin de cycle
+        document.getElementById('projetFinCycleEnCours').addEventListener('change', function() {
+            document.getElementById('projetFinCycleInfo').classList.remove('hidden');
+            document.getElementById('resultatsProjetFinCycleDiv').style.display = 'block';
+            document.getElementById('resultatsProjetFinCycle').placeholder = 'Quels sont les résultats obtenus ? (si disponibles)';
+        });
+
+        document.getElementById('projetFinCycleTermine').addEventListener('change', function() {
+            document.getElementById('projetFinCycleInfo').classList.remove('hidden');
+            document.getElementById('resultatsProjetFinCycleDiv').style.display = 'block';
+            document.getElementById('resultatsProjetFinCycle').placeholder = 'Quels sont les résultats obtenus ?';
+        });
+
+        document.getElementById('projetFinCycleNon').addEventListener('change', function() {
+            document.getElementById('projetFinCycleInfo').classList.add('hidden');
+            clearProjetFinCycleFields();
+        });
+
+
+
+        // Compteurs pour les IDs uniques
+        let stageCounter = 0;
+        let posteCounter = 0;
+
+        // Ajouter un stage
+        document.getElementById('ajouterStage').addEventListener('click', function() {
+            stageCounter++;
+            const stageDiv = document.createElement('div');
+            stageDiv.className = 'bg-white p-4 rounded-lg border border-gray-200';
+            stageDiv.innerHTML = `
+                <div class="flex justify-between items-center mb-3">
+                    <h4 class="font-medium text-gray-800">Stage ${stageCounter}</h4>
+                    <button type="button" onclick="this.parentElement.parentElement.remove()" class="text-red-600 hover:text-red-800">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Nom de la compagnie :</label>
+                        <input type="text" name="stageCompagnie${stageCounter}" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Date de début :</label>
+                        <input type="date" name="stageDebut${stageCounter}" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Date de fin :</label>
+                        <input type="date" name="stageFin${stageCounter}" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Détails du stage :</label>
+                    <textarea name="stageDetails${stageCounter}" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Missions, tâches réalisées, compétences acquises..."></textarea>
+                </div>
+            `;
+            document.getElementById('stagesList').appendChild(stageDiv);
+        });
+
+        // Ajouter un poste
+        document.getElementById('ajouterPoste').addEventListener('click', function() {
+            posteCounter++;
+            const posteDiv = document.createElement('div');
+            posteDiv.className = 'bg-white p-4 rounded-lg border border-gray-200';
+            posteDiv.innerHTML = `
+                <div class="flex justify-between items-center mb-3">
+                    <h4 class="font-medium text-gray-800">Poste ${posteCounter}</h4>
+                    <button type="button" onclick="this.parentElement.parentElement.remove()" class="text-red-600 hover:text-red-800">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Nom de la compagnie :</label>
+                        <input type="text" name="posteCompagnie${posteCounter}" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Intitulé du poste :</label>
+                        <input type="text" name="posteIntitule${posteCounter}" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Date de début :</label>
+                        <input type="date" name="posteDebut${posteCounter}" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Date de fin :</label>
+                        <input type="text" name="posteFin${posteCounter}" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Date ou 'en cours'">
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Détails du poste :</label>
+                    <textarea name="posteDetails${posteCounter}" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Missions, responsabilités, compétences développées..."></textarea>
+                </div>
+            `;
+            document.getElementById('postesList').appendChild(posteDiv);
+        });
+
+        // Fonctions de nettoyage des champs
+        function clearBacObtenuFields() {
+            document.getElementById('filiereBac').value = '';
+            document.getElementById('lyceeBac').value = '';
+            document.getElementById('mentionBac').value = '';
+            document.getElementById('anneeBac').value = '';
+        }
+
+        function clearEtudesFields() {
+            document.getElementById('niveauEtudes').value = '';
+            document.getElementById('etablissementActuel').value = '';
+            document.getElementById('specialiteActuelle').value = '';
+        }
+
+        function clearLicenceFields() {
+            document.getElementById('nomLicence').value = '';
+            document.getElementById('anneeLicence').value = '';
+            document.getElementById('mentionLicence').value = '';
+            document.getElementById('etablissementLicence').value = '';
+        }
+
+        function clearBtsFields() {
+            document.getElementById('nomBts').value = '';
+            document.getElementById('anneeBts').value = '';
+            document.getElementById('etablissementBts').value = '';
+            document.getElementById('mentionBts').value = '';
+        }
+
+        function clearDiplomeFinFields() {
+            document.getElementById('nomDiplomeFin').value = '';
+            document.getElementById('anneeDiplomeFin').value = '';
+            document.getElementById('mentionDiplomeFin').value = '';
+            document.getElementById('etablissementDiplomeFin').value = '';
+        }
+
+        function clearProjetFinEtudeFields() {
+            document.getElementById('intituleProjetFinEtude').value = '';
+            document.getElementById('themeProjetFinEtude').value = '';
+            document.getElementById('objectifsProjetFinEtude').value = '';
+            document.getElementById('methodologieProjetFinEtude').value = '';
+            document.getElementById('resultatsProjetFinEtude').value = '';
+            document.getElementById('etablissementProjetFinEtude').value = '';
+            document.getElementById('dateDebutProjetFinEtude').value = '';
+            document.getElementById('dateFinProjetFinEtude').value = '';
+        }
+
+        function clearProjetFinCycleFields() {
+            document.getElementById('intituleProjetFinCycle').value = '';
+            document.getElementById('themeProjetFinCycle').value = '';
+            document.getElementById('objectifsProjetFinCycle').value = '';
+            document.getElementById('methodologieProjetFinCycle').value = '';
+            document.getElementById('resultatsProjetFinCycle').value = '';
+            document.getElementById('etablissementProjetFinCycle').value = '';
+            document.getElementById('dateDebutProjetFinCycle').value = '';
+            document.getElementById('dateFinProjetFinCycle').value = '';
+        }
+
+
+
+        // Gestion de la soumission du formulaire
+        document.getElementById('websiteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collecte des données du formulaire
+            const formData = {
+                // Informations personnelles
+                nom: document.getElementById('nom').value,
+                prenom: document.getElementById('prenom').value,
+                adresse: document.getElementById('adresse').value,
+                email: document.getElementById('email').value,
+                telephone: document.getElementById('telephone').value,
+                linkedin: document.getElementById('linkedin').value,
+                
+                // Permis de conduire
+                permis: document.querySelector('input[name="permis"]:checked').value,
+                categoriesPermis: Array.from(document.querySelectorAll('input[name="categoriePermis"]:checked')).map(cb => cb.value),
+                
+                // Site web personnel
+                siteWeb: document.querySelector('input[name="siteWeb"]:checked').value,
+                siteWebUrl: document.getElementById('siteWebUrl').value,
+                
+                // Parcours scolaire
+                baccalaureat: document.querySelector('input[name="baccalaureat"]:checked').value,
+                lyceeActuel: document.getElementById('lyceeActuel').value,
+                filiereBac: document.getElementById('filiereBac').value,
+                lyceeBac: document.getElementById('lyceeBac').value,
+                mentionBac: document.getElementById('mentionBac').value,
+                anneeBac: document.getElementById('anneeBac').value,
+                
+                // Études supérieures
+                etudesSuperieures: document.querySelector('input[name="etudesSuperieures"]:checked').value,
+                niveauEtudes: document.getElementById('niveauEtudes').value,
+                etablissementActuel: document.getElementById('etablissementActuel').value,
+                specialiteActuelle: document.getElementById('specialiteActuelle').value,
+                
+                // Licence
+                licenceObtenue: document.querySelector('input[name="licenceObtenue"]:checked').value,
+                nomLicence: document.getElementById('nomLicence').value,
+                anneeLicence: document.getElementById('anneeLicence').value,
+                mentionLicence: document.getElementById('mentionLicence').value,
+                etablissementLicence: document.getElementById('etablissementLicence').value,
+                
+
+                
+                // Objectif du CV
+                typeEtablissement: document.getElementById('typeEtablissement').value,
+                nomEtablissementVise: document.getElementById('nomEtablissementVise').value,
+                formationVisee: document.getElementById('formationVisee').value,
+                villeEtablissement: document.getElementById('villeEtablissement').value,
+                projetProfessionnel: document.getElementById('projetProfessionnel').value,
+
+            };
+
+            // Affichage du message de confirmation
+            document.getElementById('confirmationMessage').classList.remove('hidden');
+            
+            // Scroll vers le message de confirmation
+            document.getElementById('confirmationMessage').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+
+            console.log('Données complètes du formulaire:', formData);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97a021c984feba8d',t:'MTc1NzAxNjY0NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

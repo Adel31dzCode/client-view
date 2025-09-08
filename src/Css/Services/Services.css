@@ -61,7 +61,7 @@ html {
 }
 #section-content h1 {
     text-align: center;
-    padding: 40px 0;
+    padding: 40px 10px;
     font-size: 52px;
     font-family: var(--main-font);
     color: #28306c;
@@ -69,7 +69,7 @@ html {
 .intro-text-service {
     font-family: var(--second-font);
     text-align: center;
-    padding: 0px 0 30px;
+    padding: 0px 10px 30px;
 }
 #separator-service {
     width: 70%;
@@ -155,4 +155,36 @@ html {
     left: 0;
     color: var(--main-color);
     font-weight: bold;
+}
+.title-colored-service {
+    color: #39438f;
+}
+#marger-forbtn-service {
+    margin-bottom: 50px !important;
+}
+#btn-continer-service-join {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    bottom: 0;
+    left: 0%;
+}
+#join-service {
+    width: 60%;
+    height: 45px;
+    background-color: #3c4693;
+    border: none;
+    outline: none;
+    border-radius: 14px;
+    font-family: var(--main-font);
+    color: #fff;
+    margin: 10px auto;
+    margin-inline: auto;
+    transition: .6s;
+    box-shadow: 0 0 40px 1px #0000007b;
+}
+#join-service:hover {
+    background-color: #28306c;
 }

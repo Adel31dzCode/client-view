@@ -1,0 +1,263 @@
+/* FormCv.css - أنماط لمكون نموذج إنشاء الموقع */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.form-cv-container {
+  background: transparent;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-cv-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-cv-header h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.form-cv-header p {
+  font-size: 1.125rem;
+  color: #6B7280;
+}
+
+.form-cv-form {
+  background: transparent;
+}
+
+.form-section-cv {
+  background-color: transparent;
+  border-radius: 0.5rem;
+  padding:  30px 1.5rem;
+  margin-bottom: 0rem;
+}
+
+.form-section-cv h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #374151;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.form-section-cv h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 1.5rem 0 1rem 0;
+}
+
+.form-section-cv-highlighted {
+  background-color: #EFF6FF;
+  border-left: 4px solid #3B82F6;
+}
+
+.form-section-cv-inner {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-grid-2 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .form-grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.form-field-cv {
+  margin: 0 25px ;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #E5E7EB;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #8B5CF6;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.2);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.radio-option,
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-family: var(--main-font);
+}
+
+.radio-option input,
+.checkbox-option input {
+  margin-right: 0.5rem;
+}
+
+.radio-option label,
+.checkbox-option label {
+  cursor: pointer;
+}
+
+.checkbox-group {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+.checkbox-group-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.submit-button {
+  width: 100%;
+  background: linear-gradient(to right, #8ac3ff, #203453);
+  color: white;
+  font-weight: 600;
+  font-size: 1.125rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+}
+
+.success-message {
+  padding: 1.5rem;
+  background-color: #F0FDF4;
+  border: 2px solid #BBF7D0;
+  border-radius: 0.5rem;
+  animation: slideIn 0.5s ease-out;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+}
+
+.success-flex {
+  display: flex;
+  align-items: center;
+}
+
+.success-icon {
+  font-size: 2rem;
+  color: #16A34A;
+  margin-right: 0.75rem;
+}
+
+.success-title {
+  font-weight: 600;
+  color: #166534;
+  margin-bottom: 0.25rem;
+}
+
+.success-description {
+  color: #15803D;
+  font-size: 0.875rem;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* تأثيرات التركيز */
+.input-focus:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+}
+
+/* تأثيرات التحويم */
+.hover-border-purple-300:hover {
+  border-color: #D8B4FE;
+}
+
+.hover-border-purple-400:hover {
+  border-color: #C4B5FD;
+}
+
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* تصميم متجاوب إضافي */
+@media (max-width: 768px) {
+  .form-cv-container {
+    padding: 1rem;
+  }
+  
+  .form-section-cv {
+    padding: 1rem;
+  }
+  
+  .form-cv-header h1 {
+    font-size: 1.875rem;
+  }
+  
+  .form-cv-header p {
+    font-size: 1rem;
+  }
+  
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+}
